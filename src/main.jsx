@@ -10,12 +10,14 @@ import {
 } from "react-router-dom";
 import App from "./pages/App";
 import Login from "./pages/Login";
+import { Toaster } from "./components/ui/toaster";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route
       element={
         <div className="h-dvh w-dvw">
+          <Toaster />
           <Outlet />
         </div>
       }

@@ -2,8 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
+import { useToast } from "@/components/ui/use-toast";
 
 export default function Login() {
+  const { toast } = useToast();
+
   const form = useForm({
     defaultValues: {
       email: "",
@@ -13,6 +16,9 @@ export default function Login() {
 
   function onSubmit(data) {
     console.log(data);
+    toast({
+      description: "Check your email and password",
+    });
   }
 
   return (
