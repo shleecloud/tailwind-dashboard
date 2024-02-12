@@ -11,6 +11,7 @@ import {
 import App from "./pages/App";
 import Login from "./pages/Login";
 import { Toaster } from "./components/ui/toaster";
+import Register from "./pages/Register";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
     >
       <Route element={<App />} path="/" />
       <Route element={<Login />} path="/login" />
+      <Route element={<Register />} path="register" />
     </Route>,
   ),
 );
