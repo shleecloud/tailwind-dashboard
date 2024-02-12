@@ -17,13 +17,12 @@ export default function Login() {
   function onSubmit(data) {
     console.log(data);
     toast({
-      description: "Check your email and password",
+      description: "Check your Email and Password",
     });
   }
 
   return (
     <div
-      title="container"
       className="h-full relative flex-col items-center justify-center grid" // lg:max-w-none lg:grid-cols-2 lg:px-0"
     >
       <a
@@ -32,9 +31,6 @@ export default function Login() {
       >
         Login
       </a>
-      {/* <div title="side-image" className="bg-slate-200 w-half">
-        image plate
-      </div> */}
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[375px]">
         <div className="mx-auto flex flex-col items-center justify-center space-y-4">
           <div className="flex flex-col space-y-3 text-center">
@@ -113,7 +109,11 @@ export default function Login() {
           </div>
           <div className="relative w-full group">
             <div className="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt" />
-            <Button className="relative w-full" type="button">
+            <Button
+              className="relative w-full hover:bg-white"
+              variant="outline"
+              type="button"
+            >
               Guest Login
             </Button>
           </div>
