@@ -1,14 +1,10 @@
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
@@ -16,7 +12,7 @@ import { useState } from "react";
 
 export default function NavBar() {
   const [openComboBox, setOpenComboBox] = useState(false);
-  const location = window.location.pathname;
+  const location = useLocation().pathname;
 
   console.log(location);
 
