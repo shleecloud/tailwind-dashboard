@@ -12,6 +12,8 @@ import App from "./pages/App";
 import Login from "./pages/Login";
 import { Toaster } from "./components/ui/toaster";
 import Register from "./pages/Register";
+import Home from "./pages/Home";
+import Customers from "./pages/Customers";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,7 +27,9 @@ const router = createBrowserRouter(
     >
       <Route element={<App />} path="/" />
       <Route element={<Login />} path="/login" />
-      <Route element={<Register />} path="register" />
+      <Route element={<Register />} path="/register" />
+      <Route element={<Home />} path="/home" />
+      <Route element={<Customers />} path="/customers" />
     </Route>,
   ),
 );
