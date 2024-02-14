@@ -11,12 +11,33 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+
+const phoneRegex = new RegExp(
+  /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/,
+);
+
+const formSchema = z
+  .object({
+    email: z.string().email(),
+    password: z.string().min(8).max(16),
+    confirmPassword: z.string().min(8).max(16),
+    phone: z.string().min(10).regex(phoneRegex, "Invalid Number!"),
+    approve: z.boolean(),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Password does not match",
+    path: ["confirmPassword"],
+  });
 
 export default function Register() {
   const form = useForm({
+    resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
       password: "",
+      confirmPassword: "",
       phone: "",
       approve: false,
     },
@@ -82,6 +103,27 @@ export default function Register() {
 
             <FormField
               control={form.control}
+              name="confirmPassword"
+              label="Confirm Password"
+              type="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Confirm Password</FormLabel>
+                  <FormControl>
+                    <Input
+                      id="confirmPassword"
+                      placeholder="Confirm your password"
+                      type="password"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
               name="phone"
               label="phone"
               type="tel"
@@ -107,14 +149,14 @@ export default function Register() {
               label="approve"
               type="checkbox"
               render={({ field }) => (
-                <FormItem className="relative">
+                <FormItem className="relative mt-1">
                   <FormLabel className="mr-1">
                     I Agree to the use demo service
                   </FormLabel>
                   <FormControl className="absolute -top-1">
                     <Checkbox {...field} />
                   </FormControl>
-                  <FormDescription>
+                  <FormDescription className="">
                     You agree to our{" "}
                     <span className="underline cursor-pointer">
                       Terms of Service
