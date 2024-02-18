@@ -1,5 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { DatePickerWithRange } from "@/components/date-range-picker";
+import {
+  DataCard,
+  DataCartTitle,
+  DataCardValue,
+  DataCardValueDescription,
+} from "@/components/data-card";
+import { DollarSign } from "lucide-react";
 
 export default function Home() {
   return (
@@ -10,6 +17,13 @@ export default function Home() {
           <DatePickerWithRange />
           <Button className="">Download</Button>
         </div>
+      </div>
+      <div>
+        <DataCard>
+          <DataCartTitle icon={<DollarSign />}>Total Revenue</DataCartTitle>
+          <DataCardValue>$28,551,000</DataCardValue>
+          <DataCardValueDescription>Since last month</DataCardValueDescription>
+        </DataCard>
       </div>
     </section>
   );
