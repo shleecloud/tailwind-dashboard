@@ -20,7 +20,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route
       element={
-        <div className="h-dvh w-dvw">
+        <div className="h-dvh container">
           <Toaster />
           <Outlet />
         </div>
