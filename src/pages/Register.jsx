@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { useNavigate } from "react-router-dom";
 
 const phoneRegex = new RegExp(
   /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/,
@@ -29,9 +30,15 @@ const formSchema = z
   .refine((data) => data.password === data.confirmPassword, {
     message: "Password does not match",
     path: ["confirmPassword"],
+  })
+  .refine((data) => data.approve === true, {
+    message: "You must agree to the terms",
+    path: ["approve"],
   });
 
 export default function Register() {
+  const navigate = useNavigate();
+
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -43,8 +50,10 @@ export default function Register() {
     },
   });
 
-  function onSubmit(data) {
+  function handleSubmit(data) {
     console.log(data);
+    //TODO send data to the home page and save local storage
+    navigate("/home");
   }
 
   return (
@@ -52,14 +61,14 @@ export default function Register() {
       <div className="">
         <div className="flex flex-col space-y-1 text-center">
           <h1 className="text-3xl font-bold">Register</h1>
-          <p className="text-sm text-slate-600">
+          <p className="pt-1 text-sm text-slate-600">
             Test email, password, phone resolver from zod!
           </p>
         </div>
         <Form {...form}>
           <form
             className="flex flex-col gap-2 my-3 w-full"
-            onSubmit={form.handleSubmit(onSubmit)}
+            onSubmit={form.handleSubmit(handleSubmit)}
           >
             <FormField
               control={form.control}
@@ -154,8 +163,11 @@ export default function Register() {
                     I Agree to the use demo service
                   </FormLabel>
                   <FormControl className="absolute -top-1">
+                    {/* //TODO fix the checkbox */}
                     <Checkbox {...field} />
                   </FormControl>
+                  <FormMessage />
+
                   <FormDescription className="">
                     You agree to our{" "}
                     <span className="underline cursor-pointer">
@@ -170,8 +182,16 @@ export default function Register() {
               )}
             />
 
-            <Button className="w-full mt-2" type="submit">
+            <Button className="mt-2" type="submit">
               Sign Up
+            </Button>
+            <Button
+              variant="secondary"
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              Cancel
             </Button>
           </form>
         </Form>

@@ -9,8 +9,10 @@ import {
 } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { useToast } from "@/components/ui/use-toast";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
   const { toast } = useToast();
 
   const form = useForm({
@@ -20,11 +22,15 @@ export default function Login() {
     },
   });
 
-  function onSubmit(data) {
+  function handleSubmit(data) {
     console.log(data);
     toast({
       description: "Check your Email and Password",
     });
+  }
+
+  function handleGuestLogin() {
+    navigate("/home");
   }
 
   return (
@@ -47,7 +53,7 @@ export default function Login() {
         <Form {...form}>
           <form
             className="flex flex-col gap-2 my-5 w-full"
-            onSubmit={form.handleSubmit(onSubmit)}
+            onSubmit={form.handleSubmit(handleSubmit)}
           >
             <FormField
               control={form.control}
@@ -120,6 +126,7 @@ export default function Login() {
             className="relative w-full hover:bg-white"
             variant="outline"
             type="button"
+            onClick={handleGuestLogin}
           >
             Guest Login
           </Button>
