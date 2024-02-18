@@ -65,8 +65,8 @@ export const Chart = () => {
       <ResponsiveContainer className="p-3" width="100%" height={500}>
         <BarChart data={data}>
           <Bar radius={[6, 6, 0, 0]} dataKey="uv" fill="#181818" />
-          <XAxis dataKey="name" />
-          <YAxis unit="$" />
+          <XAxis axisLine={false} tickLine={false} dataKey="name" />
+          <YAxis axisLine={false} tickLine={false} unit="$" />
           <Tooltip />
         </BarChart>
       </ResponsiveContainer>
