@@ -1,64 +1,83 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import { Link, useLocation } from "react-router-dom";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function NavBar() {
-  const [openComboBox, setOpenComboBox] = useState(false);
   const location = useLocation().pathname;
-
-  console.log(location);
+  const navigate = useNavigate();
 
   return (
-    <section className="flex-shrink-0 h-16 flex justify-between px-4">
+    <section className="flex-shrink-0 h-16 flex justify-between">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <Link to="/home">
-              <NavigationMenuLink
-                className={navigationMenuTriggerStyle()}
-                active={location === "/home"}
-              >
-                Dashboard
-              </NavigationMenuLink>
-            </Link>
+            <NavigationMenuLink
+              className={navigationMenuTriggerStyle()}
+              active={location === "/home"}
+              onClick={() => navigate("/home")}
+            >
+              Dashboard
+            </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link to="/customers">
-              <NavigationMenuLink
-                className={navigationMenuTriggerStyle()}
-                active={location === "/customers"}
-              >
-                Customers
-              </NavigationMenuLink>
-            </Link>
+            <NavigationMenuLink
+              className={navigationMenuTriggerStyle()}
+              active={location === "/customers"}
+              onClick={() => navigate("/customers")}
+            >
+              Customers
+            </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link to="/about">
-              <NavigationMenuLink
-                className={navigationMenuTriggerStyle()}
-                active={location === "/about"}
-              >
-                About
-              </NavigationMenuLink>
-            </Link>
+            <NavigationMenuLink
+              className={navigationMenuTriggerStyle()}
+              active={location === "/about"}
+              onClick={() => navigate("/about")}
+            >
+              About
+            </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
 
       <div className="flex items-center space-x-3">
         <Input className="rounded-lg" placeholder="Search..." disabled />
-        <Avatar>
-          <AvatarImage src="https://ui.shadcn.com/avatars/01.png" />
-          <AvatarFallback>FB</AvatarFallback>
-        </Avatar>
+
+        <DropdownMenu defaultOpen={false}>
+          <DropdownMenuTrigger>
+            <Avatar>
+              <AvatarImage src="https://ui.shadcn.com/avatars/01.png" />
+              <AvatarFallback>AFB</AvatarFallback>
+            </Avatar>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align={"end"}>
+            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>Profile</DropdownMenuItem>
+            <DropdownMenuItem>Billing</DropdownMenuItem>
+            <DropdownMenuItem>Team</DropdownMenuItem>
+            <DropdownMenuItem>Subscription</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem onClick={() => navigate("/login")}>
+              Logout
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </section>
   );
