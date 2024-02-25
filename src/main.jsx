@@ -12,9 +12,9 @@ import Login from "./pages/Login";
 import { Toaster } from "./components/ui/toaster";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
-import DataTable from "./pages/DataTable";
 import About from "./pages/About";
 import NavBar from "./components/NavBar";
+import Customers from "./pages/Customers";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -38,7 +38,7 @@ const router = createBrowserRouter(
         }
       >
         <Route element={<Dashboard />} path="/dashboard" />
-        <Route element={<DataTable />} path="/data-table" />
+        <Route element={<Customers />} path="/customers" />
         <Route element={<About />} path="/about" />
       </Route>
     </Route>,
