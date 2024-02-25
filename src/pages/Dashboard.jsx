@@ -9,16 +9,23 @@ import {
 import { DollarSign, Users, CreditCard, Activity } from "lucide-react";
 import { Chart } from "@/components/chart";
 import { RecentSales } from "@/components/recent-sales";
+import { useWindowSize } from "@uidotdev/usehooks";
+import { Download } from "lucide-react";
 
 export default function Dashboard() {
+  const { width } = useWindowSize();
+  const isMobile = width < 640;
+
   return (
     <section className="pb-4">
       {/* Title */}
-      <div className="flex justify-between items-center my-4">
+      <div className="flex flex-col justify-between items-start my-4 gap-2 sm:flex-row sm:items-center">
         <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
-        <div className="flex gap-1">
+        <div className="flex align-middle gap-1">
           <DatePickerWithRange />
-          <Button className="">Download</Button>
+          <Button variant={isMobile ? "outline" : ""}>
+            {isMobile ? <Download /> : "Download"}
+          </Button>
         </div>
       </div>
 

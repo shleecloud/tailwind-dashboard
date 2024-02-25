@@ -52,7 +52,6 @@ export default function Register() {
 
   function handleSubmit(data) {
     console.log(data);
-    //TODO send data to the home page and save local storage
     navigate("/home");
   }
 
@@ -163,7 +162,6 @@ export default function Register() {
                     I Agree to the use demo service
                   </FormLabel>
                   <FormControl className="absolute -top-1">
-                    {/* //TODO fix the checkbox */}
                     <Checkbox {...field} />
                   </FormControl>
                   <FormMessage />
