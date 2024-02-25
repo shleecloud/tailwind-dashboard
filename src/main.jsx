@@ -13,7 +13,7 @@ import { Toaster } from "./components/ui/toaster";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import About from "./pages/About";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/nav-bar";
 import Customers from "./pages/Customers";
 
 const router = createBrowserRouter(

@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { DatePickerWithRange } from "@/components/DateRangePicker";
+import { DatePickerWithRange } from "@/components/date-range-picker";
 import {
   DataCard,
   DataCartTitle,
   DataCardValue,
   DataCardDescription,
-} from "@/components/DataCard";
+} from "@/components/data-card";
 import { DollarSign, Users, CreditCard, Activity } from "lucide-react";
-import { Chart } from "@/components/Chart";
-import { RecentSales } from "@/components/RecentSales";
+import { Chart } from "@/components/chart";
+import { RecentSales } from "@/components/recent-sales";
 
 export default function Dashboard() {
   return (
