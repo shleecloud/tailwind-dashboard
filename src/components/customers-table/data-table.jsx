@@ -13,26 +13,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import { fetchDataTable } from "@/api/fetchDataTable";
-
-export function DataTable() {
-  const columns = [
-    {
-      accessorKey: "status",
-      header: "Status",
-    },
-    {
-      accessorKey: "email",
-      header: "Email",
-    },
-    {
-      accessorKey: "amount",
-      header: "Amount",
-    },
-  ];
-
-  const data = fetchDataTable();
-
+export function DataTable({ columns, data }) {
   const table = useReactTable({
     columns,
     data,
