@@ -5,69 +5,68 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
 } from "recharts";
 
 export const Chart = () => {
   const data = [
     {
       name: "Jan",
-      uv: 4000,
+      revenue: 4000,
     },
     {
       name: "Feb",
-      uv: 3000,
+      revenue: 3000,
     },
     {
       name: "Mar",
-      uv: 2000,
+      revenue: 2000,
     },
     {
       name: "Apr",
-      uv: 2780,
+      revenue: 2780,
     },
     {
       name: "May",
-      uv: 1890,
+      revenue: 1890,
     },
     {
       name: "Jun",
-      uv: 2390,
+      revenue: 2390,
     },
     {
       name: "Jul",
-      uv: 3490,
+      revenue: 3490,
     },
     {
       name: "Aug",
-      uv: 6420,
+      revenue: 6420,
     },
     {
       name: "Sep",
-      uv: 9490,
+      revenue: 9490,
     },
     {
       name: "Oct",
-      uv: 12470,
+      revenue: 12470,
     },
     {
       name: "Nov",
-      uv: 14590,
+      revenue: 14590,
     },
     {
       name: "Dec",
-      uv: 20000,
+      revenue: 20000,
     },
   ];
 
   return (
     <>
-      <ResponsiveContainer className="p-3" width="100%" height={500}>
+      <ResponsiveContainer className="p-3" width="100%" height={400}>
         <BarChart data={data}>
-          <Bar radius={[6, 6, 0, 0]} dataKey="uv" fill="#181818" />
+          <Tooltip />
           <XAxis axisLine={false} tickLine={false} dataKey="name" />
           <YAxis axisLine={false} tickLine={false} unit="$" />
-          <Tooltip />
+          <Bar radius={[6, 6, 0, 0]} dataKey="revenue" fill="#181818" />
         </BarChart>
       </ResponsiveContainer>
     </>

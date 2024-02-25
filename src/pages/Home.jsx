@@ -8,10 +8,11 @@ import {
 } from "@/components/data-card";
 import { DollarSign, Users, CreditCard, Activity } from "lucide-react";
 import { Chart } from "@/components/chart";
+import { SalesList } from "@/components/sales-list";
 
 export default function Home() {
   return (
-    <section className="">
+    <section className="pb-4">
       {/* Title */}
       <div className="flex justify-between items-center my-4">
         <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
@@ -48,11 +49,17 @@ export default function Home() {
       {/* Chart */}
       <div className="flex-grow grid gap-4 sm:grid-cols-1 lg:grid-cols-7 mt-4">
         <div className="rounded-xl border bg-card text-card-foreground shadow sm:col-span-1 lg:col-span-4">
-          <h2 className="p-6 text-2xl font-semibold">Overview</h2>
+          <h2 className="p-6 text-xl font-semibold">Overview</h2>
           <Chart />
         </div>
         <div className="rounded-xl border bg-card text-card-foreground shadow sm:col-span-1 lg:col-span-3">
-          users
+          <div className="p-6">
+            <h2 className="text-xl font-semibold">Recent Sales</h2>
+            <p className="text-sm text-muted-foreground">
+              You made 265 sales this month.
+            </p>
+            <SalesList />
+          </div>
         </div>
       </div>
     </section>
