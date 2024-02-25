@@ -11,8 +11,8 @@ import {
 import Login from "./pages/Login";
 import { Toaster } from "./components/ui/toaster";
 import Register from "./pages/Register";
-import Home from "./pages/Home";
-import Customers from "./pages/Customers";
+import Dashboard from "./pages/Dashboard";
+import DataTable from "./pages/DataTable";
 import About from "./pages/About";
 import NavBar from "./components/NavBar";
 
@@ -37,8 +37,8 @@ const router = createBrowserRouter(
           </section>
         }
       >
-        <Route element={<Home />} path="/home" />
-        <Route element={<Customers />} path="/customers" />
+        <Route element={<Dashboard />} path="/dashboard" />
+        <Route element={<DataTable />} path="/data-table" />
         <Route element={<About />} path="/about" />
       </Route>
     </Route>,

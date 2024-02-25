@@ -1,16 +1,16 @@
 import { Button } from "@/components/ui/button";
-import { DatePickerWithRange } from "@/components/date-range-picker";
+import { DatePickerWithRange } from "@/components/DateRangePicker";
 import {
   DataCard,
   DataCartTitle,
   DataCardValue,
   DataCardDescription,
-} from "@/components/data-card";
+} from "@/components/DataCard";
 import { DollarSign, Users, CreditCard, Activity } from "lucide-react";
-import { Chart } from "@/components/chart";
-import { SalesList } from "@/components/sales-list";
+import { Chart } from "@/components/Chart";
+import { RecentSales } from "@/components/RecentSales";
 
-export default function Home() {
+export default function Dashboard() {
   return (
     <section className="pb-4">
       {/* Title */}
@@ -58,7 +58,7 @@ export default function Home() {
             <p className="text-sm text-muted-foreground">
               You made 265 sales this month.
             </p>
-            <SalesList />
+            <RecentSales />
           </div>
         </div>
       </div>

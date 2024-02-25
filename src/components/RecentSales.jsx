@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 
-export const SalesList = () => {
+export const RecentSales = () => {
   const sales = [
     {
       id: 1,

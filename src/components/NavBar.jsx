@@ -28,8 +28,8 @@ export default function NavBar() {
           <NavigationMenuItem>
             <NavigationMenuLink
               className={navigationMenuTriggerStyle()}
-              active={location === "/home"}
-              onClick={() => navigate("/home")}
+              active={location === "/dashboard"}
+              onClick={() => navigate("/dashboard")}
             >
               Dashboard
             </NavigationMenuLink>
@@ -37,10 +37,10 @@ export default function NavBar() {
           <NavigationMenuItem>
             <NavigationMenuLink
               className={navigationMenuTriggerStyle()}
-              active={location === "/customers"}
-              onClick={() => navigate("/customers")}
+              active={location === "/data-table"}
+              onClick={() => navigate("/data-table")}
             >
-              Customers
+              Data Table
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
