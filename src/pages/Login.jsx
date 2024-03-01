@@ -39,7 +39,7 @@ export default function Login() {
     >
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[375px]">
         <div className="flex flex-col space-y-3 text-center">
-          <h1 className="text-3xl font-bold">Welcome Back</h1>
+          <h1 className="text-5xl font-bold">Welcome Back</h1>
           <p className="text-sm text-slate-600">
             Enter your email below to Login to your account
           </p>

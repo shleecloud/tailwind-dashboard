@@ -20,7 +20,7 @@ export default function Dashboard() {
     <section className="pb-4">
       {/* Title */}
       <div className="flex flex-col justify-between items-start my-4 gap-2 sm:flex-row sm:items-center">
-        <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
+        <h1 className="text-5xl font-bold tracking-tight">Dashboard</h1>
         <div className="flex align-middle gap-1">
           <DatePickerWithRange />
           <Button variant={isMobile ? "outline" : ""}>

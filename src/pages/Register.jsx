@@ -58,9 +58,9 @@ export default function Register() {
   return (
     <div className="h-full relative items-center justify-center grid">
       <div className="">
-        <div className="flex flex-col space-y-1 text-center">
-          <h1 className="text-3xl font-bold">Register</h1>
-          <p className="pt-1 text-sm text-slate-600">
+        <div className="flex flex-col space-y-3 text-center">
+          <h1 className="text-5xl font-bold">Register</h1>
+          <p className="text-sm text-slate-600">
             Test email, password, phone resolver from zod!
           </p>
         </div>

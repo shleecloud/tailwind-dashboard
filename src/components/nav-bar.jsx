@@ -114,7 +114,7 @@ export default function NavBar() {
                 <AvatarFallback>AFB</AvatarFallback>
               </Avatar>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align={"end"}>
+            <DropdownMenuContent align={"center"}>
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuItem disabled>Profile</DropdownMenuItem>
               <DropdownMenuItem disabled>Billing</DropdownMenuItem>
