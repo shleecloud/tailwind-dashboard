@@ -33,6 +33,10 @@ export default function Login() {
     navigate("/dashboard");
   }
 
+  function handleRegister() {
+    navigate("/register");
+  }
+
   return (
     <div
       className="h-full relative items-center justify-center grid" // lg:max-w-none lg:grid-cols-2 lg:px-0"
@@ -91,12 +95,7 @@ export default function Login() {
             </Button>
             <p className="text-sm text-center text-slate-600">
               {"Don't have an account? "}
-              <a
-                className="underline"
-                href="/register"
-                title="register"
-                aria-label="register"
-              >
+              <a className="underline cursor-pointer" onClick={handleRegister}>
                 Register
               </a>
             </p>

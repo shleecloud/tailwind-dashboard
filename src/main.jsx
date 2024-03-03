@@ -43,6 +43,9 @@ const router = createBrowserRouter(
       </Route>
     </Route>,
   ),
+  {
+    basename: "/tailwind-dashboard",
+  },
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
