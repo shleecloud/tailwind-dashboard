@@ -19,4 +19,5 @@ export default defineConfig({
     outDir: "docs",
     chunkSizeWarningLimit: 1024,
   },
+  base: "/tailwind-dashboard/",
 });
