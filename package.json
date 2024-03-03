@@ -1,8 +1,9 @@
 {
   "name": "tailwind-dashboard",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
+  "homepage": "https://shleecloud.github.io/tailwind-dashboard/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -125,6 +125,12 @@ export default function Login() {
           </Button>
         </div>
       </div>
+      <p className="absolute right-1 bottom-1 text-gray-300 pointer-events-none">
+        {
+          // eslint-disable-next-line no-undef
+          NPM_PACKAGE_VERSION
+        }
+      </p>
     </div>
   );
 }

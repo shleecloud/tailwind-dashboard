@@ -19,5 +19,9 @@ export default defineConfig({
     outDir: "docs",
     chunkSizeWarningLimit: 1024,
   },
+  define: {
+    // eslint-disable-next-line no-undef
+    NPM_PACKAGE_VERSION: JSON.stringify(process.env.npm_package_version),
+  },
   base: "/tailwind-dashboard/",
 });
