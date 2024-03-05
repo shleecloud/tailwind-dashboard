@@ -35,7 +35,7 @@ export default function About() {
           <img
             // src="https://avatars.githubusercontent.com/u/62797565?v=4"
             src="just-do-it.jpeg"
-            className="w-40 bg-red-500 rounded-full sm:mx-0 mx-auto"
+            className="w-40 bg-black-500 rounded-full sm:mx-0 mx-auto"
           ></img>
           <div className="my-auto sm:mx-0 text-center sm:text-left">
             <p className="text-xl font-bold">안녕하세요. shleecloud 입니다.</p>
