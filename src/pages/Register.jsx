@@ -52,7 +52,7 @@ export default function Register() {
 
   function handleSubmit(data) {
     console.log(data);
-    navigate("/home");
+    navigate("/dashboard");
   }
 
   return (
@@ -162,7 +162,12 @@ export default function Register() {
                     I Agree to the use demo service
                   </FormLabel>
                   <FormControl className="absolute -top-1">
-                    <Checkbox {...field} />
+                    <Checkbox
+                      id="approve"
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
 
