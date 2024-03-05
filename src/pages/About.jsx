@@ -1,3 +1,6 @@
+import { Link as LinkIcon, Github } from "lucide-react";
+import { Link } from "react-router-dom";
+
 export default function About() {
   const H2 = ({ ...props }) => (
     <h2
@@ -27,6 +30,34 @@ export default function About() {
     <section className="pb-4">
       <h1 className="my-4 text-5xl font-bold tracking-tight">About</h1>
       <article className="my-6 prose lg:prose-xl">
+        <H2>만든이</H2>
+        <div className="my-6 flex sm:flex-row flex-col gap-4">
+          <img
+            // src="https://avatars.githubusercontent.com/u/62797565?v=4"
+            src="just-do-it.jpeg"
+            className="w-40 bg-red-500 rounded-full sm:mx-0 mx-auto"
+          ></img>
+          <div className="my-auto sm:mx-0 text-center sm:text-left">
+            <p className="text-xl font-bold">안녕하세요. shleecloud 입니다.</p>
+            여기까지 방문해주셔서 감사합니다. <br />
+            개발로 먹고 살면서 취미로 개발합니다.
+            <br />
+            웹과 앱 그리고 백엔드를 다룹니다.
+            <br />
+            <Link
+              to="https://github.com/shleecloud"
+              className="underline text-gray-500"
+            >
+              <Github className="inline" size={16} />
+              <span className="mx-0.5">Github</span>
+            </Link>
+            <span> </span>
+            <Link to="https://shlee.cloud" className="underline text-gray-500">
+              <LinkIcon className="inline" size={16} />
+              <span className="mx-0.5">Blog</span>
+            </Link>
+          </div>
+        </div>
         <H2>코드 재사용성</H2>
         <P>
           프론트엔드 개발을 하다보면 매번 비슷한 UI 컴포넌트를 만들게 됩니다.
